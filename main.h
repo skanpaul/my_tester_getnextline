@@ -12,11 +12,22 @@
 #ifndef MAIN_H
 # define MAIN_H
 /* ************************************************************************** */
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+/* -------------------------------------------------------------------------- */
+# include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 /* -------------------------------------------------------------------------- */
-int	main(void);
+# include "../getnextline/get_next_line.h"
+# include "libft/libft.h"
+# include "sk_lib.h"
 
+/* -------------------------------------------------------------------------- */
+void	test_externe(void);
+void	test_gnl(void);
+void	sk_printmem(void *ptr, size_t size);
 /* ************************************************************************** */
 # endif
