@@ -15,7 +15,7 @@
 void	test_externe(void)
 {
 	int		fd;
-	char	*filename = "text/text5";
+	char	*filename = "text/text4";
 	char	buffer[BUFFER_SIZE + 1];
 	ssize_t	n_read_char;
 

@@ -15,18 +15,18 @@
 void	test_gnl(void)
 {
 	int		fd;
-	char	*filename = "text/text2";
-	char	buffer[BUFFER_SIZE + 1];
-	ssize_t	n_read_char;
-	char	*read_line;
+	char	*filename = "text/text1";
+	// char	buffer[BUFFER_SIZE + 1];
+	// ssize_t	n_read_char;
+	char	*new;
 	int		cnt_line;
 
 
-	read_line = NULL;
+	new = NULL;
 	cnt_line = 0;
 
-	n_read_char = 0;
-	buffer[BUFFER_SIZE] = '\0';
+	// n_read_char = 0;
+	// buffer[BUFFER_SIZE] = '\0';
 
 	/* OUVERTURE DE FICHIER ------------------------------ */
 	fd = sub_open_rdonly(filename);
@@ -34,21 +34,16 @@ void	test_gnl(void)
 		return ;
 
 	/* GET NEXT LINE ------------------------------------- */
-
-	read_line = get_next_line();
-	cnt_line++;
-	
-	while (read_line != NULL)
+	while (new == NULL)
 	{
-		printf("buffer: %s\n", buffer);
-		free(read_line);
-
-		read_line = get_next_line();
+		new = get_next_line(fd);
 		cnt_line++;
+
+		printf("new line: %s\n", new);
+		free(new);
 	}
 
-
-	if (read_line == NULL)
+	if (new == NULL)
 	{
 		printf("*************************************\n");
 		printf("Nothing to read more OR Error occured\n");
