@@ -23,7 +23,7 @@ int	main(void)
 {
 	enum enum_test	le_test;
 
-	le_test = 0;
+	le_test = 1;
 
 	/* ------------------------------------------------------ */
 	switch (le_test)
