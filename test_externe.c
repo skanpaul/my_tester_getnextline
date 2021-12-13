@@ -65,7 +65,8 @@ int sub_open_rdonly(char *filename)
 		printf("\n");
 		printf("***********************************\n");
 		printf("Open [%s]: SUCCEED\n", filename);
-		printf("File descriptor: %d | BUFFER_SIZE: %d\n", fd, BUFFER_SIZE);
+		printf("File descriptor: %d\n", fd);
+		printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
 		printf("***********************************\n");
 		printf("\n");
 	}

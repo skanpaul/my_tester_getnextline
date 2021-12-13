@@ -15,7 +15,7 @@ AR 				= ar rc
 RM				= rm -f 
 NORM			= norminette -R CheckForbiddenSourceHeader
 # **************************************************************************** #
-BUF_SIZE		= 10
+BUF_SIZE		= 1
 BUF_FLAG		= -D BUFFER_SIZE=${BUF_SIZE}
 # ----------------------------------------------------------------------------
 NAME 			= a.out
@@ -37,6 +37,13 @@ HD_LIBFT		= ${PATH_LIBFT}libft.h
 # SRC_LIBFT		= $(wildcard ${PATH_LIBFT}*.c) 
 # OBJ_LIBFT		= ${PATH_LIBFT:.c=.o}
 # MK_LIBFT		= ${PATH_GNL}Makefile
+#MK_GNL			= ${PATH_GNL}Makefile
+# ----------------------------------------------------------------------------
+PATH_LIBSKI		= libsorakann/
+HD_LIBSKI		= ${PATH_LIBSKI}libsorakann.h
+SRC_LIBSKI		= $(wildcard ${PATH_LIBSKI}*.c) 
+# OBJ_LIBSKI	= ${PATH_LIBFT:.c=.o}
+# MK_LIBSKI		= ${PATH_GNL}Makefile
 # **************************************************************************** #
 # PATH_SUBMAKE	= ${PATH_GNL}
 # SRC_NORM		= ${SRC_MAIN}
@@ -47,8 +54,8 @@ all: $(NAME)
 
 #$(NAME): $(OBJ_GNL) $(OBJ_MAIN) ${MK_MAIN} 
 #	${CC} $(CFLAGS) ${BUF_FLAG} $(OBJ_GNL) $(OBJ_MAIN) -o $(NAME)
-$(NAME): $(SRC_GNL) $(SRC_MAIN) ${MK_MAIN} 
-	${CC} $(CFLAGS) ${BUF_FLAG} $(SRC_GNL) $(SRC_MAIN) -L${PATH_LIBFT} -lft -o $(NAME)
+$(NAME): $(SRC_GNL) $(SRC_LIBSKI) $(SRC_MAIN) ${MK_MAIN} 
+	${CC} $(CFLAGS) ${BUF_FLAG} $(SRC_GNL) $(SRC_LIBSKI) $(SRC_MAIN) -L${PATH_LIBFT} -lft -o $(NAME)
 
 clean: sub_clean
 	${RM} *.o

@@ -15,7 +15,7 @@
 void	test_gnl(void)
 {
 	int		fd;
-	char	*filename = "text/text2";
+	char	*filename = "text/text8";
 	char	*new;
 	int		cnt_line;
 
@@ -34,7 +34,9 @@ void	test_gnl(void)
 
 	while (new != NULL)
 	{
-		printf("Line [%d]: %s\n", cnt_line, new);
+		printf("Line [%d]:\n", cnt_line);
+		ft_print_getnextline(new);
+		printf("\n");
 		free(new);
 
 		new = get_next_line(fd);

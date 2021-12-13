@@ -22,12 +22,11 @@
 # include <unistd.h>
 /* -------------------------------------------------------------------------- */
 # include "../getnextline/get_next_line.h"
-# include "sk_lib.h"
+# include "libsorakann/libsorakann.h"
 
 /* -------------------------------------------------------------------------- */
 void	test_externe(void);
 void	test_gnl(void);
-void	sk_printmem(void *ptr, size_t size);
 /* -------------------------------------------------------------------------- */
 int		sub_read(int fd, char *buffer, int buf_size);
 int		sub_close (int fd);
